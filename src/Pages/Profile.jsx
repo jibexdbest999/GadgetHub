@@ -17,8 +17,9 @@ export default function Profile() {
   return (
     <AppLayout>
         <div className="container mx-auto px-5 py-10">
-            <div className="flex gap-5">
-           <div className="w-1/3">
+            <div className="flex flex-col lg:flex-row gap-5 w-full">
+
+           <div className="w-full lg:w-1/3">
              <h1 className="text-[28px] font-semibold">Hello <span>{user?.firstName}</span></h1>
             <p className="text-[#807D7E] text-[16px]">Welcome to your Account</p>
             
@@ -45,19 +46,19 @@ export default function Profile() {
             </div>
            </div>
 
-           <div className="w-2/3">
+           <div className="w-full lg:w-2/3">
             {activeTab === "myInfo" && <div>
                 <h1 className="text-[24px] font-semibold">My Info</h1>
                 <p className="text-[#807D7E] text-[16px]">Manage your personal information and addresses</p>
                 </div>}
 
 
-                {activeTab === "myWishlist" && <div>
+                 {activeTab === "myWishlist" && <div>
                     <h1 className="text-[24px] font-semibold">Wishlist</h1>
-                    <p>{getLikesCount()} items saved for later</p>
+                   {likes.length > 0 && <p>{getLikesCount()} items saved for later</p>}
 
                     <div className="my-6">
-                        {getLikesCount === 0 ? <p>No products in wishlist</p> : <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {getLikesCount() === 0 ? <p className="font-semibold text-lg text-dark">No products in wishlist</p> : <div className="grid lg:grid-cols-2 2xl:grid-cols-3 gap-5">
                     {likes.map((item) => (
                       <Card key={item.id} {...item} />
                     ))}
