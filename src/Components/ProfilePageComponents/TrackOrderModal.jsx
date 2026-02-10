@@ -1,5 +1,5 @@
 import React from "react";
-import orderIcon from "../../assets/icon.png";
+import orderIcon from "../../assets/Icon.png";
 import clockIcon from "../../assets/clockVector.png";
 import Truck from "../../assets/iconoir_delivery-truck.png"
 import Pin from "../../assets/locationPin.png"
