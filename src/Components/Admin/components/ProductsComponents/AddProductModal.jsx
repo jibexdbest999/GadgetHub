@@ -83,9 +83,9 @@ export default function AddProductModal({showModal, setShowModal}) {
       formPayload.append("price", formData.price)
       formPayload.append("specifications", JSON.stringify(specifications))
       try {
-        await addProduct(formPayload)
+        const createdProduct = await addProduct(formPayload)
         setShowSuccess(true)
-        setProduct(newProduct);
+        setProduct(createdProduct);
         setFormData({ name: "", description: "", category: "", brand: "" });
         setImage(null);
         setPreview(null);

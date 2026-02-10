@@ -38,7 +38,7 @@ export default function Header() {
     {
         id: 2,
         icon: <FaRegHeart />,
-        linkTo: "/likes"
+        linkTo: ""
     },
     {
         id: 3,
