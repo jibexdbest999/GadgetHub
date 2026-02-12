@@ -44,11 +44,11 @@ export default function CheckoutPage() {
   // Named callback function
   async function paystackCallback(response, orderId) {
     try {
-      await axios.post("https://gadgethub-server.onrender.com/api/payments/verify", {
+      await axios.post("https://gadgethub-server-giwj.onrender.com/api/payments/verify", {
         reference: response.reference,
       });
 
-      await axios.patch(`https://gadgethub-server.onrender.com/api/orders/${orderId}/payment`, {
+      await axios.patch(`https://gadgethub-server-giwj.onrender.com/api/orders/${orderId}/payment`, {
         paymentStatus: "paid",
         paymentMethod: "creditcard",
       });
@@ -72,7 +72,7 @@ export default function CheckoutPage() {
     }
 
     try {
-      const { data } = await axios.post("https://gadgethub-server.onrender.com/api/payments/card-init", {
+      const { data } = await axios.post("https://gadgethub-server-giwj.onrender.com/api/payments/card-init", {
         email: orderData.customer.email,
         amount,
       });
@@ -113,7 +113,7 @@ export default function CheckoutPage() {
       });
 
       const orderRes = await axios.post(
-        "https://gadgethub-server.onrender.com/api/orders/",
+        "https://gadgethub-server-giwj.onrender.com/api/orders/",
         {
           customer: orderData.customer,
           items: cart,
@@ -163,7 +163,7 @@ export default function CheckoutPage() {
       }
 
       if (orderData.paymentMethod === "paystack" || orderData.paymentMethod === "paypal") {
-        const paymentRes = await axios.post("https://gadgethub-server.onrender.com/api/payments/initialize", {
+        const paymentRes = await axios.post("https://gadgethub-server-giwj.onrender.com/api/payments/initialize", {
           orderId,
           method: orderData.paymentMethod,
         });
