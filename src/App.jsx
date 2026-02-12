@@ -1,30 +1,38 @@
+import React, { Suspense, lazy } from "react"
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from "react-router"
-import Login from "./Pages/AuthPages/Login"
-import SignUp from "./Pages/AuthPages/SignUp"
-import ForgotPassword from "./Pages/AuthPages/ForgotPassword"
-import EmailConfirm from "./Pages/AuthPages/EmailConfirmation"
-import ResetPassword from "./Pages/AuthPages/ResetPassword"
-import HomePage from "./Pages/HomePage"
 import ScrollToTop from "./Components/ScrollToTop"
-import ProductPage from "./Pages/ProductPage"
-import ProductDetailsPage from "./Pages/ProductDetailsPage"
-import CartPage from "./Pages/CartPage"
-import CheckoutPage from "./Pages/CheckoutPage"
-import Profile from "./Pages/Profile"
-import ProtectRoute from "./Components/ProtectRoute"
-import Dashboard from "./Components/Admin/Pages/Dashboard"
-import AdminLayout from "./Components/Admin/Layout/AdminLayout"
-import Orders from "./Components/Admin/Pages/Orders"
-import Products from "./Components/Admin/Pages/Products"
 import AdminRoute from "./Components/Admin/components/ProtectAdminRoute"
+import FallBackLoader from "./Components/FallBackLoader"
+import ProtectRoute from "./Components/ProtectRoute"
+
+const HomePage = lazy(() => import("./Pages/HomePage"));
+const Login = lazy(() => import("./Pages/AuthPages/Login"));
+const SignUp = lazy(() => import("./Pages/AuthPages/SignUp"));
+const ForgotPassword = lazy(() => import("./Pages/AuthPages/ForgotPassword"));
+const EmailConfirm = lazy(() => import("./Pages/AuthPages/EmailConfirmation"));
+const ResetPassword = lazy(() => import("./Pages/AuthPages/ResetPassword"));
+const ProductPage = lazy(() => import("./Pages/ProductPage"));
+const ProductDetailsPage = lazy(() => import("./Pages/ProductDetailsPage"));
+const CartPage = lazy(() => import("./Pages/CartPage"));
+const CheckoutPage = lazy(() => import("./Pages/CheckoutPage"));
+const Profile = lazy(() => import("./Pages/Profile"));
+const AdminLogin = lazy(() => import("./Pages/AuthPages/AdminLogin.jsx"));
+
+// Admin pages
+const Dashboard = lazy(() => import("./Components/Admin/Pages/Dashboard"));
+const AdminLayout = lazy(() => import("./Components/Admin/Layout/AdminLayout"));
+const Orders = lazy(() => import("./Components/Admin/Pages/Orders"));
+const Products = lazy(() => import("./Components/Admin/Pages/Products"));
+
 
 function App() {
 
   return (
     <>
     <Router>
-      <Routes>
+      <Suspense fallback={<FallBackLoader />} >
+        <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
@@ -36,7 +44,8 @@ function App() {
         <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/cartpage" element={<CartPage />} />
         <Route path="/profile" element={<ProtectRoute><Profile /></ProtectRoute>} />
-
+        <Route path="/adminLogin" element={<AdminLogin />} />
+      
        <Route path="/admin" element={<AdminRoute><AdminLayout /></AdminRoute>}>
         <Route index element={<Dashboard />} />
         <Route path="orders" element={<Orders />} />
@@ -48,6 +57,8 @@ function App() {
 
       </Routes>
        <ScrollToTop />
+
+      </Suspense>
     </Router>
     </>
   ) 

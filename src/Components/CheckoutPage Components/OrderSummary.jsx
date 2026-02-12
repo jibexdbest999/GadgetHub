@@ -4,7 +4,7 @@ import OrderItems from "./OrderItems"
 
 export default function OrderSummary({onConfirm, paymentMethod, deliveryMethod}) {
     const {cart, totalPrice, getCartCount} = useContext(CartContext)
-    let deliveryCost = deliveryMethod === "doorstep" ? 1000 : 0
+    let deliveryCost = deliveryMethod === "doorstep" ? 3000 : 0
     let subTotal = totalPrice
   return (
     <div className="border border-[#E8E6E6] p-3 rounded-md">

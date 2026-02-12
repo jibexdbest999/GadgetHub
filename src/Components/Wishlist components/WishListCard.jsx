@@ -21,7 +21,7 @@ export default function WishListCard({id,image,name,description,rating,reviews,p
         <button onClick={deleteFromWishList} className="bg-[#FFF1F1] absolute top-3 right-3 rounded-full flex items-center justify-center text-[#EE2020] w-8 h-8" ><GoTrash size=
         {20} /></button>
         
-        <img className="w-full object-cover rounded-t-md h-[274px]" src={image} alt="" />
+        <img loading="lazy" className="w-full object-cover rounded-t-md h-[274px]" src={image} alt="" />
 
     <div className="w-full p-4 border-t border-t-[#E8E6E6]">
           <Link to={`/product/${id}`} className="flex flex-col gap-2">

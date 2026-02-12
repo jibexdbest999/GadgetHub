@@ -6,10 +6,11 @@ import { products } from "../productData.js"
 import FilterSideBar from "../Components/ProductPage Components/FilterSideBar"
 import vector from "../assets/doublearrowright.png"
 import ServiceAd from "../Components/HomePage Components/ServiceAd"
-import { useSearchParams } from "react-router";
+import { useSearchParams, Link } from "react-router";
 
 
 export default function ProductPage() {
+
     const [activeFilters, setActiveFilters] = useState({
         category: null,
         price: null,
@@ -58,7 +59,7 @@ export default function ProductPage() {
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 9;
 
-   const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+  const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
   const startIndex = (currentPage - 1) * productsPerPage;
   const endIndex = startIndex + productsPerPage;
   const currentProducts = filteredProducts.slice(startIndex, endIndex);
@@ -72,7 +73,13 @@ export default function ProductPage() {
   return (
    <AppLayout>
     <div className="px-5 py-1 lg:py-4 mx-auto container">
-         <h1 className="flex items-center gap-1 text-[16px] text-[#5F6C72]">Home  <span className="text-[12px] text-[#434545]"><FaGreaterThan /></span> <span className="font-semibold">All Categories</span> </h1>
+         <div className="hidden lg:flex items-center gap-1">
+          <h1 className="flex items-center gap-1 text-[16px] text-[#5F6C72]">
+          <Link to="/">Home</Link>  
+         </h1>
+         <span className="text-[12px] text-[#434545]"><FaGreaterThan /></span>
+         <span className="font-semibold">All Categories</span> 
+         </div>
         <div className="flex justify-between items-center">
             <div className="py-2">
                 {searchQuery ? (<h1 className="text-[24px] font-semibold">Search results for “{searchQuery}”</h1>) : (<><h1 className="text-[24px] font-semibold">All Categories</h1><p className="text-[15px]">Showing 1 - 15 of 2000 photos</p></>)}
@@ -84,7 +91,7 @@ export default function ProductPage() {
            <FilterSideBar activeFilters={activeFilters} setActiveFilters={setActiveFilters} />
            
            <div className="flex flex-col items-center py-4 lg:py-0">
-             <div className="grid lg:grid-cols-3 gap-5">
+             <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
             {currentProducts.map((product)=>{
                 return <ProductCard key={product.id} {...product} />
             })}
@@ -117,7 +124,7 @@ export default function ProductPage() {
                 onClick={() => goToPage(currentPage + 1)}
                 disabled={currentPage === totalPages}
               >
-                <img src={vector} alt="" />
+                <img loading="lazy" src={vector} alt="" />
               </button>
             </div>
            </div>

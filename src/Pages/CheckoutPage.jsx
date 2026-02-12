@@ -44,11 +44,11 @@ export default function CheckoutPage() {
   // Named callback function
   async function paystackCallback(response, orderId) {
     try {
-      await axios.post("http://localhost:5000/api/payments/verify", {
+      await axios.post("https://gadgethub-server.onrender.com/api/payments/verify", {
         reference: response.reference,
       });
 
-      await axios.patch(`http://localhost:5000/api/orders/${orderId}/payment`, {
+      await axios.patch(`https://gadgethub-server.onrender.com/api/orders/${orderId}/payment`, {
         paymentStatus: "paid",
         paymentMethod: "creditcard",
       });
@@ -72,7 +72,7 @@ export default function CheckoutPage() {
     }
 
     try {
-      const { data } = await axios.post("http://localhost:5000/api/payments/card-init", {
+      const { data } = await axios.post("https://gadgethub-server.onrender.com/api/payments/card-init", {
         email: orderData.customer.email,
         amount,
       });
@@ -113,7 +113,7 @@ export default function CheckoutPage() {
       });
 
       const orderRes = await axios.post(
-        "http://localhost:5000/api/orders/",
+        "https://gadgethub-server.onrender.com/api/orders/",
         {
           customer: orderData.customer,
           items: cart,
@@ -132,6 +132,23 @@ export default function CheckoutPage() {
 
       const orderId = orderRes.data.order._id;
       setCart([]);
+    //   const { saveAddress, address, state, city } = orderData.customer;
+    //   if (saveAddress && address && state && city) {
+    //     try {
+    // await axios.post(
+    //   "https://gadgethub-server.onrender.com/api/user/auth/address",
+    //   { address, state, city },
+    //   {
+    //     headers: {
+    //       Authorization: `Bearer ${token}`,
+    //     },
+    //   }
+    // );
+    //   } catch (err) {
+    //   console.error("Failed to save address", err);
+    //  }
+    //  }
+    //  await refreshUser()
 
       if (orderData.paymentMethod === "delivery") {
         toast.success("Order placed successfully. Pay on delivery.");
@@ -146,7 +163,7 @@ export default function CheckoutPage() {
       }
 
       if (orderData.paymentMethod === "paystack" || orderData.paymentMethod === "paypal") {
-        const paymentRes = await axios.post("http://localhost:5000/api/payments/initialize", {
+        const paymentRes = await axios.post("https://gadgethub-server.onrender.com/api/payments/initialize", {
           orderId,
           method: orderData.paymentMethod,
         });
@@ -195,10 +212,10 @@ export default function CheckoutPage() {
 
       <div className="flex justify-between px-3 py-3 container mx-auto">
         <Link to="/">
-          <img className="w-[152px] h-[39px]" src={Logo} alt="" />
+          <img loading="lazy" className="w-[152px] h-[39px]" src={Logo} alt="" />
         </Link>
         <div className="flex items-center gap-2">
-          <img className="w-4 h-4 lg:w-6 lg:h-6" src={paymentVector} alt="" />
+          <img loading="lazy" className="w-4 h-4 lg:w-6 lg:h-6" src={paymentVector} alt="" />
           <p className="text-[14px] lg:text-[18px]">secure & safe payment</p>
         </div>
       </div>

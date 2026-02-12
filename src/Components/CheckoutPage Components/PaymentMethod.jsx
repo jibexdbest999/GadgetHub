@@ -149,7 +149,7 @@ export default function PaymentMethod({ onChange }) {
         />
         <label>Pay With Paystack</label>
         </div>
-        {/* <img src={payPal} alt="" /> */}
+        <img className="w-10 h-10" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAV1BMVEX///8LpNsAn9nC5fVMs+EAodqOyumRz+ur1+74/f41r98AntmEy+ry+v3Q6/dyxOe54fOu2/Df8vrp+PwAptyj2PBMt+JduuTM6/d9yOmX0+2r2/GMzuvavb78AAAB9klEQVR4nO3ca3LaMBSAUSPikuDyjCFN0/2vsxBm8reOJperOuesgG+UYElI7joAAAAAAAAAAAAAAAAAaMzmsPoRYrXMTrs5jKWPUYb1MbvuYj8s4vTjJruv6wL7rok/s/u6ZeQQXgofsgO7xz60cLF+Si8sChUqVKhQocJvUDj7OU30vPQlOzB6bTEcsvsugxj5j1gaGMJL4jiUKLvsuJun/SrGqYU9DAC+xnb3EGm3zQ58jdrU/9jcf80NXMVOva+GVWbgJnh9+K5k/nqxv0vhPrEwegX8rn/MLLzLGCpUqFChQoWNF87+iX+4yxhm7gtv45cWl8VF6hJxHf9n2q8zA7vjGJ3Yj8k7w8dz3K7+1XDO3/p+XkZ6zs4DuIuo79Jf6ecwbiKfh8m73Tehc5pyzs7rouel5ZTdF7226PMHMXp9mH/qa/7n2r7B2USFChUqVKjw34Wzf+IHn8VoYF4afJ6m/M4ODD4T1cRN58hzbWVsYzs47Gziyyn9awaAr1Jz72nfwpN8qqq7a8P4lv25J6u9f9jC3clpquecqcfTP6H+HnDqQadPqF8Blz/Zn32a+l2MBl6QNIlChe1TqLB9CmdQOPs5zfznpfNfW1S/v3TIP+00VdU7aMvi/wmse4/wWxs/SAAAAAAAAAAAAAAAAABAnb9hfTgEVrM7gQAAAABJRU5ErkJggg==" alt="" />
       </div>
     </form>
   )

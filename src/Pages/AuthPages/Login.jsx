@@ -54,10 +54,15 @@ export default function Login() {
     setIsLoading(true)
     setErrors({})
     try {
-      await SignIn(formData)
+     const user = await SignIn(formData)
       setFormData(initialFormData)
       toast.success("Login successful")
-      navigate("/")
+      if (user.role?.toLowerCase() === "admin") {
+      navigate("/admin");
+     } else {
+     navigate("/");
+     }
+
     } catch (error) {
       setSubmitError(error.message || "Login failed")
       toast.error("Login failed, try again!")

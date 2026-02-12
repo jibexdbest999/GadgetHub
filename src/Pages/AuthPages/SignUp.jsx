@@ -64,7 +64,7 @@ export default function SignUp() {
     const handleSubmit = async (e)=>{
       e.preventDefault();
       if (!formValidation()) return;
-      console.log(formData);
+      // console.log(formData);
       setIsLoading(true)
       setErrors({})
       try {

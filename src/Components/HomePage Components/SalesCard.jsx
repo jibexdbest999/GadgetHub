@@ -5,7 +5,7 @@ export default function SalesCard({id, name, image, displayPrice, description, o
   return (
     <div className="p-4 flex bg-white items-center gap-[24px] rounded-md w-[370px] h-[126px]">
 
-        <img className="border-1 border-[#E3E3E3] w-[90px] h-[90px]" src={image} alt={name} />
+        <img loading="lazy" className="border-1 border-[#E3E3E3] w-[90px] h-[90px]" src={image} alt={name} />
 
         <div className="gap-4">
         <p className="text-[16px] font-semibold ">{name}</p>

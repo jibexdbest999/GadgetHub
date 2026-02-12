@@ -17,7 +17,7 @@ export default function CartItem({id, image, name,description,quantity,price,isI
 
            <div className="flex items-center gap-2">
              <div className="w-[78px] h-[97px] rounded-sm">
-                <img className="object-contain" src={image} alt={name} />
+                <img loading="lazy" className="object-contain" src={image} alt={name} />
             </div>
             <div>
                 <h1 className="text-[16px] font-medium">{name}</h1>

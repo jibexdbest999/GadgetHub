@@ -49,13 +49,13 @@ export default function ResetPassword() {
     setIsLoading(true)
     try {
       await resetPassword(token,formData)
-      console.log(token);
+      // console.log(token);
       
       setFormData({ password: "", confirmPassword: "" })
       toast.success("New Password created, Log in now!")
       navigate("/login")
     } catch (error) {
-      console.log(error)
+      // console.log(error)
       toast.error("Failed to create a new password, try again")
       setSubmitError(error.message || "Failed to create a new password, try again")
     }finally{

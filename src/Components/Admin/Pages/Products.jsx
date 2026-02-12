@@ -64,6 +64,7 @@ export default function Products() {
             className="flex items-center cursor-pointer h-10 gap-1"
           >
             <img
+            loading="lazy"
               className="h-[30px] w-[30px] rounded-full"
               src={
                 user?.image ||

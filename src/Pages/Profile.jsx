@@ -10,13 +10,14 @@ import Card from "../Components/Wishlist components/WishListCard"
 import { LikeContext } from "../Context/LikeContext"
 import Orders from "../Components/ProfilePageComponents/Orders"
 import LogoutModal from "../Components/LogoutModal"
+import UserInfo from "../Components/ProfilePageComponents/UserInfo"
+import Settings from "../Components/SettingsComponents/Settings"
 
-export default function Profile() {
+export default function Profile({ customerDetails}) {
     const { user, logout } = useContext(AuthContext)
     const [ activeTab, setActiveTab ] = useState("myInfo")
     const { likes, getLikesCount } = useContext(LikeContext)
     const [showLogoutModal, setShowLogoutModal] = useState(false)
-
 
   return (
     <AppLayout>
@@ -44,17 +45,14 @@ export default function Profile() {
                     <span><IoSettingsOutline size={30} /></span> Account Settings
                 </button>
 
-                 <button onClick={()=> setShowLogoutModal(true)} className={`text-[18px] font-semibold text-[#807D7E] flex gap-2 w-full h-11 items-center pl-5  bg-none border-0 hover:cursor-pointer`}>
+                 <button onClick={()=> setShowLogoutModal(true)} className={`text-[18px] font-semibold text-[#EE2020] flex gap-2 w-full h-11 items-center pl-5  bg-none border-0 hover:cursor-pointer`}>
                     <span><PiSignOut size={30} /></span> Sign Out
                 </button>
             </div>
            </div>
 
            <div className="w-full">
-            {activeTab === "myInfo" && <div>
-                <h1 className="text-[24px] font-semibold">My Info</h1>
-                <p className="text-[#807D7E] text-[16px]">Manage your personal information and addresses</p>
-                </div>}
+            {activeTab === "myInfo" && <UserInfo orderData={{ customer : customerDetails }} /> }
 
                 { activeTab === "myOrders" && <div>
                   <Orders />
@@ -66,7 +64,7 @@ export default function Profile() {
                    {likes.length > 0 && <p>{getLikesCount()} items saved for later</p>}
 
                     <div className="my-6">
-                        {getLikesCount() === 0 ? <p className="font-semibold text-lg text-dark">No products in wishlist</p> : <div className="grid lg:grid-cols-3 gap-5 justify-between">
+                        {getLikesCount() === 0 ? <p className="font-semibold text-lg text-dark text-center">No products in wishlist</p> : <div className="grid lg:grid-cols-3 gap-5 justify-between">
                     {likes.map((item) => (
                       <Card key={item.id} {...item} />
                     ))}
@@ -74,18 +72,22 @@ export default function Profile() {
                     </div>                    
                     </div>}
 
+                    {activeTab === "settings" && <div>
+                      <Settings />
+                      
+                      </div>}
+
                     
            </div>
             </div>
         </div>
 
         {showLogoutModal && (
-        <LogoutModal 
+          <LogoutModal 
           onClose={() => setShowLogoutModal(false)} 
-          onConfirm={logout} // pass logout function
-        />
-      )}
-
+          onConfirm={logout}
+          />
+        )}
     </AppLayout>
   )
 }

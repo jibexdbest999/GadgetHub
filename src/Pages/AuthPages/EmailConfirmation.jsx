@@ -20,7 +20,7 @@ export default function EmailConfirmation() {
     e.preventDefault()
    try {
      await forgotPassword({email})
-    console.log("Email resent to:", email);
+    // console.log("Email resent to:", email);
     toast.success("Email reset sent")  
    } catch (error) {
     console.log(error);

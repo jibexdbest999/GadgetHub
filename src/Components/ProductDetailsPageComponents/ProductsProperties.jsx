@@ -124,6 +124,7 @@ export default function ProductsProperties({product}) {
 
           <div className="relative w-full lg:w-[520px] lg:h-[573px] bg-white rounded-lg">
             <img
+            loading="lazy"
               src={selectedImage}
               alt={name}
               className="w-full lg:w-[520px] h-auto rounded-md border border-[#E8E6E6] object-contain"
@@ -150,6 +151,7 @@ export default function ProductsProperties({product}) {
                 className="w-[120px] h-28 rounded-md"
               >
                 <img
+                loading="lazy"
                   src={img}
                   alt=""
                   className={`object-cover rounded-md

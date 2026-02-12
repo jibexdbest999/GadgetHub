@@ -55,6 +55,7 @@ export default function Orders() {
             className="flex items-center cursor-pointer gap-2"
           >
             <img
+            loading="lazy"
               className="h-[30px] w-[30px] rounded-full"
               src={user?.image || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRadJ-YmNxJTg6v9iO22fzR_65KenYJHFB5zg&s"}
               alt={user?.firstName}
@@ -93,7 +94,7 @@ export default function Orders() {
 
   return (
     <div className="bg-white w-full min-h-screen">
-      <div className="flex justify-between items-center py-5 px-5 border-b">
+      <div className="flex justify-between items-center py-5 px-5 border-b border-[#E7E4E4]">
         <div className="relative h-11 w-full max-w-md">
           <Input
             name="q"
@@ -115,7 +116,7 @@ export default function Orders() {
       </div>
 
       <div className="px-5">
-        <div className="p-5 flex gap-5 border rounded-md">
+        <div className="p-5 flex gap-5 border border-[#E7E4E4] rounded-md">
           <div className="relative w-2/3">
             <Input
               name="q"
@@ -133,7 +134,7 @@ export default function Orders() {
               name="status"
               value={searchQuery.status}
               onChange={handleSearch}
-              className="border h-11 w-[220px] rounded-md pl-8"
+              className="border border-[#E7E4E4] h-11 w-[220px] rounded-md pl-8"
             >
               <option value="">All Status</option>
               <option value="pending">Pending</option>

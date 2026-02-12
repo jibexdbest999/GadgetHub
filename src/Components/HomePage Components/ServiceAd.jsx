@@ -34,7 +34,7 @@ export default function ServiceAd() {
             {ads.map((ad,index)=>{
                 return <div className="flex mx-auto lg:gap-15 xl:gap-30 items-center justify-center">
                     <div key={index} className="flex gap-2 items-center justify-center">
-                        <img src={ad.icon} alt={ad.title} className="w-6 h-6" />
+                        <img loading="lazy" src={ad.icon} alt={ad.title} className="w-6 h-6" />
                         <div>
                             <h3 className="text-[18px] font-semibold text-gray-800">{ad.title}</h3>
                             <p className="text-[14px] text-gray-500">{ad.content}</p>

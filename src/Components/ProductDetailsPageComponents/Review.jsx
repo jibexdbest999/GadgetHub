@@ -13,15 +13,15 @@ export default function Review() {
 
         <div className="bg-[#F4F4F3] h-[235px] my-4 w-full rounded-md p-5">
             <div className="flex items-center gap-4 py-3">
-                <img className="w-[35px] h-[35px] rounded-full" src={Avatar} alt="" />
+                <img loading="lazy" className="w-[35px] h-[35px] rounded-full" src={Avatar} alt="" />
                 <div>
                     <p>Michael Chen</p>
                     <div className="flex items-center gap-2">
-                        <img src={StarVector} alt="" />
-                        <img src={StarVector} alt="" />
-                        <img src={StarVector} alt="" />
-                        <img src={StarVector} alt="" />
-                        <img src={StarVector} alt="" />
+                        <img loading="lazy" src={StarVector} alt="" />
+                        <img loading="lazy" src={StarVector} alt="" />
+                        <img loading="lazy" src={StarVector} alt="" />
+                        <img loading="lazy" src={StarVector} alt="" />
+                        <img loading="lazy" src={StarVector} alt="" />
                         <p>4.8</p>
                     </div>
                 </div>
@@ -34,15 +34,15 @@ export default function Review() {
 
          <div className="bg-[#F4F4F3] h-[235] my-4 w-full rounded-md p-5">
             <div className="flex items-center gap-4 py-3">
-                <img className="w-[35px] h-[35px] rounded-full" src={Avatar} alt="" />
+                <img loading="lazy" className="w-[35px] h-[35px] rounded-full" src={Avatar} alt="" />
                 <div>
                     <p>Michael Chen</p>
                     <div className="flex items-center gap-2">
-                        <img src={StarVector} alt="" />
-                        <img src={StarVector} alt="" />
-                        <img src={StarVector} alt="" />
-                        <img src={StarVector} alt="" />
-                        <img src={StarVector} alt="" />
+                        <img loading="lazy" src={StarVector} alt="" />
+                        <img loading="lazy" src={StarVector} alt="" />
+                        <img loading="lazy" src={StarVector} alt="" />
+                        <img loading="lazy" src={StarVector} alt="" />
+                        <img loading="lazy" src={StarVector} alt="" />
                         <p>4.8</p>
                     </div>
                 </div>

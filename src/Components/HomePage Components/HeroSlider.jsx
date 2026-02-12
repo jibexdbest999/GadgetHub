@@ -12,6 +12,7 @@ import Button from "../../Components/Button"
 import Iphone from "../../assets/iPhone 16 Plus Light.png"
 import Xiaomi from "../../assets/Xiaomi.png"
 import { useNavigate } from "react-router"
+
 export default function HeroSlider() {
     const navigate = useNavigate()
     const handleShopNow =()=>{
@@ -39,13 +40,13 @@ export default function HeroSlider() {
                     <p className="text-[16px]">A17 Pro chip with 6-core GPU Pro camera <br /> system with 48MP main</p>
                     <Button onClick={handleShopNow} className="w-[118px] h-[38px] lg:h-[48px] mt-2 font-semibold text-white" content="Shop now" />
                 </div>
-                <img src={ProMax} alt="" className="absolute bottom-0 right-0 w-[40%] h-[500.5372619628906px]" />
+                <img loading="lazy" src={ProMax} alt="" className="absolute bottom-0 right-0 w-[45%] h-[500.5372619628906px]" />
                 </div>
 
                 <div className="flex flex-col justify-between h-[560px] md:hidden lg:flex lg:w-1/3 ml-5">
 
                     <div className="bg-[#E8E6E6] flex gap-3 items-center justify-center p-5 h-[248px]  rounded-md">
-                        <img className="w-[160px] h-[160px]" src={Pods} alt="" />
+                        <img loading="lazy" className="w-[160px] h-[160px]" src={Pods} alt="" />
                         <div className="w-[30%]">
                             <h1 className="text-[24px] font-semibold">Oriamo <br /> FlipBuds Pro</h1>
                              <Button onClick={handleShopNow} className=" w-[80px] text-sm lg:text-[16px] lg:w-[100px] h-[38px] lg:h-[48px] mt-2 font-semibold text-white" content="Shop now" />
@@ -58,8 +59,8 @@ export default function HeroSlider() {
                             <h1 className="text-[24px]  font-semibold text-white">New Google <br /> Pixel 6 Pro</h1>
                             <Button onClick={handleShopNow} className=" w-[80px] text-sm lg:text-[16px] lg:w-[100px] h-[38px] lg:h-[48px] mt-2 font-semibold text-white" content="Shop now" />
                         </div>
-                        <span className="bg-[#EFD33D] w-[90px] h-[35px] absolute right-10 top-15 z-88 flex items-center justify-center font-semibold rounded-xs">15% OFF</span>
-                        <img className="w-[50%] h-[192px] absolute bottom-1 -right-4" src={PixelPhone} alt="" />
+                        <span className="bg-[#EFD33D] w-[90px] h-[35px] absolute right-10 top-10 z-88 flex items-center justify-center font-semibold rounded-xs">15% OFF</span>
+                        <img loading="lazy" className="w-[50%] h-[192px] absolute bottom-1 -right-4" src={PixelPhone} alt="" />
 
                     </div>
 
@@ -77,13 +78,13 @@ export default function HeroSlider() {
                     <p className="text-[16px]">A17 Pro chip with 6-core GPU Pro camera <br /> system with 48MP main</p>
                      <Button onClick={handleShopNow} className=" w-[118px] h-[38px] lg:h-[48px] mt-2 font-semibold text-white" content="Shop now" />
                 </div>
-                <img src={PromAxPink} alt="" className="absolute bottom-0 right-0 w-[40%] h-[460.5372619628906px]" />
+                <img loading="lazy" src={PromAxPink} alt="" className="absolute bottom-0 right-0 w-[45%] h-[460.5372619628906px]" />
                 </div>
 
                 <div className="flex flex-col justify-between h-[560px] hidden lg:flex lg:w-1/3 ml-5">
 
                     <div className="bg-[#E8E6E6] flex gap-3 items-center justify-center p-5 h-[248px] rounded-md">
-                        <img className="w-[160px] h-[160px]" src={Pods} alt="" />
+                        <img loading="lazy" className="w-[160px] h-[160px]" src={Pods} alt="" />
                         <div className="w-[30%]">
                             <h1 className="text-[24px] font-semibold">Oriamo <br /> FlipBuds Pro</h1>
                              <Button onClick={handleShopNow} className=" w-[80px] text-sm lg:text-[16px] lg:w-[100px] h-[38px] lg:h-[48px] mt-2 font-semibold text-white" content="Shop now" />
@@ -97,7 +98,7 @@ export default function HeroSlider() {
                              <Button onClick={handleShopNow} className=" w-[80px] text-sm lg:text-[16px] lg:w-[100px] h-[38px] lg:h-[48px] mt-2 font-semibold text-white" content="Shop now" />
                         </div>
                         <span className="bg-[#EFD33D] w-[90px] h-[35px] absolute right-10 top-9 z-88 flex items-center justify-center font-semibold rounded-xs">15% OFF</span>
-                        <img className="w-[40%] h-[190px] absolute bottom-0 -right-4" src={Xiaomi} alt="" />
+                        <img loading="lazy" className="w-[40%] h-[190px] absolute bottom-0 -right-4" src={Xiaomi} alt="" />
 
                     </div>
 
@@ -115,13 +116,13 @@ export default function HeroSlider() {
                     <p className="text-[16px]">A17 Pro chip with 6-core GPU Pro camera <br /> system with 48MP main</p>
                     <Button onClick={handleShopNow} className="w-[118px] h-[38px] lg:h-[48px] mt-2 font-semibold text-white" content="Shop now" />
                 </div>
-                <img src={ProMax} alt="" className="absolute bottom-0 right-0 w-[40%] h-[500.5372619628906px]" />
+                <img loading="lazy" src={ProMax} alt="" className="absolute bottom-0 right-0 w-[45%] h-[500.5372619628906px]" />
                 </div>
 
                 <div className="flex flex-col justify-between h-[560px] md:hidden lg:flex lg:w-1/3 ml-5">
 
                     <div className="bg-[#E8E6E6] flex gap-3 items-center justify-center p-5 h-[248px]  rounded-md">
-                        <img className="w-[160px] h-[160px]" src={Pods} alt="" />
+                        <img loading="lazy" className="w-[160px] h-[160px]" src={Pods} alt="" />
                         <div className="w-[30%]">
                             <h1 className="text-[24px] font-semibold">Oriamo <br /> FlipBuds Pro</h1>
                              <Button onClick={handleShopNow} className=" w-[80px] text-sm lg:text-[16px] lg:w-[100px] h-[38px] lg:h-[48px] mt-2 font-semibold text-white" content="Shop now" />
@@ -134,8 +135,8 @@ export default function HeroSlider() {
                             <h1 className="text-[24px]  font-semibold text-white">New Google <br /> Pixel 6 Pro</h1>
                             <Button onClick={handleShopNow} className=" w-[80px] text-sm lg:text-[16px] lg:w-[100px] h-[38px] lg:h-[48px] mt-2 font-semibold text-white" content="Shop now" />
                         </div>
-                        <span className="bg-[#EFD33D] w-[90px] h-[35px] absolute right-10 top-15 z-88 flex items-center justify-center font-semibold rounded-xs">15% OFF</span>
-                        <img className="w-[50%] h-[192px] absolute bottom-1 -right-4" src={PixelPhone} alt="" />
+                        <span className="bg-[#EFD33D] w-[90px] h-[35px] absolute right-10 top-10 z-88 flex items-center justify-center font-semibold rounded-xs">15% OFF</span>
+                        <img loading="lazy" className="w-[50%] h-[192px] absolute bottom-1 -right-4" src={PixelPhone} alt="" />
 
                     </div>
 
@@ -169,7 +170,7 @@ export default function HeroSlider() {
             <p className="text-[10px]">A17 Pro chip with 6-core GPU Pro camera <br /> system with 48MP main</p>
             <Button onClick={handleShopNow} className=" w-[70px] h-[25px] mt-2 text-white font-semibold text-[10px]" content="Shop now" />
         </div>
-        <img className="w-[75px] object-fit h-[150px]" src={Iphone} alt="" />
+        <img loading="lazy" className="w-[75px] object-fit h-[150px]" src={Iphone} alt="" />
        </div>
        </div>
             </SwiperSlide>
@@ -184,7 +185,7 @@ export default function HeroSlider() {
             <p className="text-[10px]">A17 Pro chip with 6-core GPU Pro camera <br /> system with 48MP main</p>
             <Button onClick={handleShopNow} className=" w-[70px] h-[25px] mt-2 text-white font-semibold text-[10px]" content="Shop now" />
         </div>
-        <img className="w-[75px] object-fit h-[150px]" src={PromAxPink} alt="" />
+        <img loading="lazy" className="w-[35%] object-fit h-[150px]" src={PromAxPink} alt="" />
        </div>
        </div>
             </SwiperSlide>

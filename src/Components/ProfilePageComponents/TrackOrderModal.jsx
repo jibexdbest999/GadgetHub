@@ -61,7 +61,7 @@ export default function TrackOrderModal({ showTrackModal, setShowTrackModal, ord
             return (
               <div key={step.key} className={`flex gap-4 ${index !== 0 ? "pt-5" : ""}`}>
                 <div className={circleClasses}>
-                    <img className="w-4 h-4 object-contain" src={step.icon} alt="" />
+                    <img loading="lazy" className="w-4 h-4 object-contain" src={step.icon} alt="" />
                     {index !== steps.length - 1 && (
                         <span className={`${isCompleted ? "bg-[#6C4CF1] h-15" : "bg-[#A8A8A8]"} 
                   absolute left-1/2 top-full w-[2px] h-10 transform -translate-x-1/2`}></span>)}

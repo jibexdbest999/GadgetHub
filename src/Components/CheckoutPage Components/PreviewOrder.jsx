@@ -7,37 +7,37 @@ export default function PreviewOrder({ orderData, cart, onBack, onConfirm }) {
 
         <h1 className="text-2xl font-semibold mb-4">Review Your Order</h1>
 
-        <section className="mb-4">
+        <section className="mb-4 text-dark">
           <h2 className="font-semibold">Customer Details</h2>
           <label className="text-[14px]" htmlFor="">Full Name</label>
-          <p className="block w-full my-2 px-3 py-2 text-[#9F9E9E] border border-[#E8E6E6] rounded-md">{orderData.customer.fullName}</p>
+          <p className="block w-full my-2 px-3 py-2  border border-[#E8E6E6] rounded-md">{orderData.customer.fullName}</p>
           <label className="text-[14px]" htmlFor="">Email Address</label>
-          <p className="block w-full my-2 px-3 py-2 text-[#9F9E9E] border border-[#E8E6E6] rounded-md">{orderData.customer.email}</p>
+          <p className="block w-full my-2 px-3 py-2 border border-[#E8E6E6] rounded-md">{orderData.customer.email}</p>
           <label className="text-[14px]" htmlFor="">Phone Number</label>
-          <p className="block w-full my-2 px-3 py-2 text-[#9F9E9E] border border-[#E8E6E6] rounded-md">{orderData.customer.phone}</p>
-          <label className="text-[14px]" htmlFor="">Email Address</label>
-          <p className="block w-full my-2 px-3 py-2 text-[#9F9E9E] border border-[#E8E6E6] rounded-md" >{orderData.customer.email}</p>
+          <p className="block w-full my-2 px-3 py-2  border border-[#E8E6E6] rounded-md">{orderData.customer.phone}</p>
+          <label className="text-[14px]" htmlFor="">Address</label>
+          <p className="block w-full my-2 px-3 py-2  border border-[#E8E6E6] rounded-md" >{orderData.customer.address}</p>
           <label className="text-[14px]" htmlFor="">State and City</label>
-          <p className="block w-full my-2 px-3 py-2 text-[#9F9E9E] border border-[#E8E6E6] rounded-md"> {orderData.customer.state}, {orderData.customer.city}</p>
+          <p className="block w-full my-2 px-3 py-2  border border-[#E8E6E6] rounded-md"> {orderData.customer.state}, {orderData.customer.city}</p>
         </section>
 
 
-        <section className="mb-4">
+        <section className="mb-4 text-dark">
           <h2 className="font-semibold">Delivery Method</h2>
-          <p className="block w-full my-2 px-3 py-2 text-[#9F9E9E] border border-[#E8E6E6] rounded-md">{orderData.deliveryMethod}</p>
+          <p className="block w-full my-2 px-3 py-2 border border-[#E8E6E6] rounded-md">{orderData.deliveryMethod}</p>
         </section>
 
 
-        <section className="mb-4">
+        <section className="mb-4 text-dark">
           <h2 className="font-semibold">Payment Method</h2>
-          <p className="block w-full my-2 px-3 py-2 text-[#9F9E9E] border border-[#E8E6E6] rounded-md">{orderData.paymentMethod}</p>
+          <p className="block w-full my-2 px-3 py-2 border border-[#E8E6E6] rounded-md">{orderData.paymentMethod}</p>
         </section>
 
         <section className="mb-4">
           <h2 className="font-semibold">Items</h2>
           {cart.map(item => (
             <div key={item.id} className="flex justify-between text-lg">
-              <span>{item.title} × {item.quantity}</span>
+              <span>{item.name} × {item.quantity}</span>
               <span>₦{item.price * item.quantity}</span>
             </div>
           ))}

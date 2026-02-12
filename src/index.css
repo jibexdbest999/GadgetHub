@@ -24,3 +24,125 @@
     font-weight: 500;
     margin-top: 20px;
 }
+
+.toggle-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10px;
+  gap:50px;
+  background-color: white;
+}
+
+.toggle-input{
+  display: none;
+}
+.toggle-label{
+  width: 30px;
+  height: 15px;
+  background: #ccc;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.toggle-label:after{
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: white;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s ease;
+}
+.toggle-input:checked + .toggle-label{
+  background-color: #9747FF
+}
+.toggle-input:checked + .toggle-label::after{
+  transform: translateX(15px);
+}
+
+
+.toggle-containerOffer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10px;
+  gap:50px;
+  background-color: white;
+}
+
+.toggle-inputOffer{
+  display: none;
+}
+.toggle-labelOffer{
+  width: 30px;
+  height: 15px;
+  background: #ccc;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.toggle-labelOffer:after{
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: white;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s ease;
+}
+.toggle-inputOffer:checked + .toggle-labelOffer{
+  background-color: #9747FF
+}
+.toggle-inputOffer:checked + .toggle-labelOffer::after{
+  transform: translateX(15px);
+}
+
+
+.toggle-containerReminder{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10px;
+  gap:50px;
+  background-color: white;
+}
+
+.toggle-inputReminder{
+  display: none;
+}
+.toggle-labelReminder{
+  width: 30px;
+  height: 15px;
+  background: #ccc;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.toggle-labelReminder:after{
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: white;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s ease;
+}
+.toggle-inputReminder:checked + .toggle-labelReminder{
+  background-color: #9747FF
+}
+.toggle-inputReminder:checked + .toggle-labelReminder::after{
+  transform: translateX(15px);
+}

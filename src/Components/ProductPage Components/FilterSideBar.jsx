@@ -79,7 +79,7 @@ export default function FilterSideBar({ activeFilters, setActiveFilters }) {
   return (
     <div
       className={`border border-[#D7D7D7] w-full lg:w-[289px] p-4 rounded-md text-[18px] flex flex-col gap-[20px] 
-      ${openFilter ? "h-screen" : "h-[300px]"}`}
+      ${openFilter ? "h-[550px]" : "h-[300px]"}`}
     >
       <p className="font-semibold">Filter</p>
 

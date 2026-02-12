@@ -11,7 +11,7 @@ export default function FlashDeals() {
         <div className="container mx-auto">
 
             <div className="flex gap-3 items-center p-4">
-                <img className="w-[64px] h-[64px]" src={flashSale} alt="" />
+                <img loading="lazy" className="w-[64px] h-[64px]" src={flashSale} alt="" />
                 <div>
                     <p className="text-[28px]">Flash Deals</p>
                     <p className="text-[18px]">Limited time offers - grab them before they're gone!</p>

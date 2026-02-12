@@ -48,7 +48,7 @@ export default function ForgotPassword() {
       toast.success("Reset password link sent to your email")
       navigate("/emailconfirmation", { state : {email : formData.email}})
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       setSubmitError(error.message || "Failed to send, please try again")
       toast.error("Failed to send reset link, try again")
     }finally{

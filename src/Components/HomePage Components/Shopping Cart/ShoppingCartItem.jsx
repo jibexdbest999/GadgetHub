@@ -9,7 +9,7 @@ export default function ShoppingCartItem({id,image,name,description,quantity,pri
 
   return (
     <div className="flex items-center gap-4">
-      <img className="w-[78px] h-[97px] object-contain" src={image} alt="" />
+      <img loading="lazy" className="w-[78px] h-[97px] object-contain" src={image} alt="" />
       <div className="w-full ">
         <div className="flex justify-between items-center relative">
         <div>

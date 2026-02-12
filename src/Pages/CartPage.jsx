@@ -5,6 +5,7 @@ import { CartContext } from "../Context/ShoppingCartContext"
 import { IoCartOutline } from "react-icons/io5";
 import { useNavigate } from "react-router"
 import OrderSummary from "../Components/CartPageComponents/OrderSummary"
+import RecentlyViewed from "../Components/CartPageComponents/RecentlyViewed"
 
 export default function CartPage() {
   const { cart } = useContext(CartContext)
@@ -28,7 +29,7 @@ export default function CartPage() {
        <div className="cartFrame">
         <h1>Shopping Cart</h1>
       </div>
-      <div className="flex flex-col lg:flex justify-between gap-5 px-5 py-5">
+      <div className="flex flex-col lg:flex lg:flex-row justify-between gap-5 px-5 py-5">
       <div className="w-full lg:w-2/3">
          {cart.map((item) => (
         <CartItem key={item.id} {...item}/>
@@ -40,7 +41,7 @@ export default function CartPage() {
       </div>
       </> }
 
-     
+     <RecentlyViewed />
     </AppLayout>
   )
 }

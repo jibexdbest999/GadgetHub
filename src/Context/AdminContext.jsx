@@ -11,12 +11,12 @@ export const AdminProvider = ({ children }) => {
   const token = localStorage.getItem("token");
 
   const apiProducts = axios.create({
-    baseURL: "http://localhost:5000/api/products",
+    baseURL: "https://gadgethub-server.onrender.com/api/products",
     headers: { Authorization: `Bearer ${token}` },
   });
 
   const apiOrders = axios.create({
-    baseURL: "http://localhost:5000/api/orders",
+    baseURL: "https://gadgethub-server.onrender.com/api/orders",
     headers: { Authorization: `Bearer ${token}` },
   });
 

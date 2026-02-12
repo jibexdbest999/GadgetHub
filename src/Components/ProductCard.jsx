@@ -14,9 +14,18 @@ export default function ProductCard({id,image,name,description,rating,reviews,pr
     if (isLiked(id)) {
       removeFromLikes(id);
     } else {
-      addToLikes({ id, image, name, price, description });
+      addToLikes({ id,image,name,description,rating,reviews,price,isNew,displayPrice});
     }
   };
+  function saveRecentlyViewed(product) {
+  let viewed = JSON.parse(localStorage.getItem("recentlyViewed")) || [];
+  viewed = viewed.filter(p => p.id !== product.id);
+  viewed.unshift(product);
+
+  if (viewed.length > 10) viewed = viewed.slice(0, 10);
+
+  localStorage.setItem("recentlyViewed", JSON.stringify(viewed));
+}
 
   return (
     <div>
@@ -28,10 +37,12 @@ export default function ProductCard({id,image,name,description,rating,reviews,pr
         ) : (
           <CiHeart size={25} />
         )}</button>
-        <img className="w-full object-cover rounded-t-md h-[274px]" src={image} alt="" />
+        <img loading="lazy" className="w-full object-cover rounded-t-md h-[274px]" src={image} alt="" />
 
     <div className="w-full p-4 border-t border-t-[#E8E6E6]">
-          <Link to={`/product/${id}`} className="flex flex-col gap-2">
+          <Link to={`/product/${id}`} className="flex flex-col gap-2"
+          onClick={() => saveRecentlyViewed({id,image,name,description,rating,reviews,price,isNew,displayPrice})}
+          >
             <p className="text-[16px]">{name}</p>
             <p className="text-[#5F6C72] text-[14px]">{description}</p>
             <div className="flex gap-2 items-center text-[#5F6C72]">

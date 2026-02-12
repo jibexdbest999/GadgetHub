@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import { AuthContext } from "../../Context/AuthContext"
 
 export default function CustomerDetailsForm({ onChange }) {
+  const [saveAddress, setSaveAddress] = useState(false)
   const [nigeriaData, setNigeriaData] = useState([]);
   const [states, setStates] = useState([]);
   const [lgas, setLgas] = useState([]);
@@ -36,11 +37,11 @@ export default function CustomerDetailsForm({ onChange }) {
       try {
         const response = await fetch("https://temikeezy.github.io/nigeria-geojson-data/data/full.json")
         const data = await response.json()
-        console.log(data);
+        // console.log(data);
         setNigeriaData(data)
         const stateNames = data.map((data)=> data.state)
         setStates(stateNames);
-        console.log(stateNames);
+        // console.log(stateNames);
       } catch (error) {
         console.error("Error loading data", error)
       }
@@ -64,9 +65,10 @@ export default function CustomerDetailsForm({ onChange }) {
       ...formData,
       state : selectedState,
       city : selectedCity,
+      saveAddress,
       hasAddress: Boolean(formData.address?.trim())
     })
-  }, [formData, selectedState, selectedCity])
+  }, [formData, selectedState, selectedCity, saveAddress])
 
 
   return (
@@ -124,7 +126,7 @@ export default function CustomerDetailsForm({ onChange }) {
             </div>
 
            <div className="flex items-center gap-2 pt-2">
-             <input className="h-5 w-5 border border-[#E8E6E6] rounded-md" type="checkbox" />
+             <input className="h-5 w-5 border border-[#E8E6E6] rounded-md" type="checkbox" checked={saveAddress} onChange={(e) => setSaveAddress(e.target.checked)} />
              <p>Save my information for a faster checkout</p>
            </div>
 

@@ -24,7 +24,7 @@ export default function Brands() {
                     { width: "110px",},
                     { height: "74px",},
                     { width: "159px", height:"" }];
-                return <img key={index} src={brand} style={styles[index]} alt="" />
+                return <img loading="lazy" key={index} src={brand} style={styles[index]} alt="" />
             })}
         </div>
     </div>

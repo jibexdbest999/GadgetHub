@@ -53,6 +53,10 @@ export default function Dashboard() {
                 { user && <UserMenu />}
             </div>
            </div>
+           <div className="bg-[#6C4CF1] text-white px-5 m-3 rounded-md h-[100px] flex flex-col justify-center">
+            <h1 className="text-[20px] font-semibold">Welcome back, Admin 👋</h1>
+            <p>Here’s a quick snapshot of your Orders.</p>
+           </div>
 
                  {showLogoutModal && (
         <LogoutModal

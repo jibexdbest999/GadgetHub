@@ -3,6 +3,8 @@ import OrdersCard from "../ProfilePageComponents/OrdersCard"
 import { AuthContext } from "../../Context/AuthContext"
 import axios from "axios";
 import { toast } from "react-toastify"
+import { useParams } from "react-router"
+import { products } from "../../productData.js"
 
 export default function Orders() {
     const { user, token } = useContext(AuthContext);
@@ -12,7 +14,7 @@ export default function Orders() {
  useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/orders/myOrders", {
+        const res = await axios.get("https://gadgethub-server.onrender.com/api/orders/myOrders", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setOrders(res.data.orders || []);
@@ -28,7 +30,7 @@ export default function Orders() {
 const handleCancel = async (id) => {
   try {
     await axios.patch(
-      `http://localhost:5000/api/orders/${id}/cancel`,
+      `https://gadgethub-server.onrender.com/api/orders/${id}/cancel`,
       {},
       { headers: { Authorization: `Bearer ${token}` } }
     );
@@ -51,6 +53,9 @@ const handleCancel = async (id) => {
     if (activeTab === "cancelled") return o.orderStatus === "cancelled";
     return true;
   });
+    const { id } = useParams()
+    const productId = Number(id);
+    const product = products.find((p) => Number(p.id) === productId);
 
   return (
     <div>
@@ -67,7 +72,7 @@ const handleCancel = async (id) => {
           <p className="text-center">Loading orders...</p>
         ) : filteredOrders.length > 0 ? (
           filteredOrders.map((order) => (
-            <OrdersCard key={order._id} order={order} onCancel={handleCancel}  setActiveTab={setActiveTab} />
+            <OrdersCard key={order._id} order={order} onCancel={handleCancel}  setActiveTab={setActiveTab} product={product} />
           ))
         ) : (
           <p className="text-gray-500 text-center">No orders found.</p>
