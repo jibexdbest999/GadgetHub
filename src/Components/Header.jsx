@@ -14,8 +14,7 @@ import { AuthContext } from "../Context/AuthContext"
 import { FaChevronDown, FaChevronUp } from "react-icons/fa"
 import { motion, AnimatePresence } from "framer-motion"
 import Button from "../Components/Button"
-import { GiHamburgerMenu } from "react-icons/gi";
-import { IoCloseSharp } from "react-icons/io5";
+
 
 export default function Header() {
   const navigate = useNavigate();

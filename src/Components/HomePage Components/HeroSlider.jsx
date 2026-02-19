@@ -2,7 +2,7 @@ import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
-import { Pagination } from 'swiper/modules'
+import { Autoplay, Pagination } from 'swiper/modules'
 import ProMax from "../../assets/promax.png"
 import PromAxPink from "../../assets/Free mockup of female hand holding iPhone 14 Pro (Mockuuups Studio).png"
 import Pods from "../../assets/pods.png"
@@ -26,7 +26,12 @@ export default function HeroSlider() {
 
        <div>
         <Swiper
-        modules={[Pagination]}
+        modules={[Autoplay, Pagination]}
+         autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
+          }}
         pagination={{ clickable: true, el : ".swiperPagination" }}
         spaceBetween={50}
         slidesPerView={1}
@@ -109,7 +114,7 @@ export default function HeroSlider() {
 
         <SwiperSlide>
             <div className="flex justify-between items-center">
-                <div className="bg-gradient-to-b from-[#0D1A56] via-[#4A5DAA] to-[#B4C6F7] relative text-white w-full lg:w-2/3 h-[560px] rounded-2xl flex flex-col justify-center items-center">
+                <div className="bg-gradient-to-b from-[#db6b21] via-[#ebad83] to-[#db6b21] relative text-white w-full lg:w-2/3 h-[560px] rounded-2xl flex flex-col justify-center items-center">
                 <div className="absolute left-[75px] w-[70%]">
                     <p className="text-[24px]">Iphone 15 Pro Max</p>
                     <h1 className="text-[38px] py-1">FROM ₦1,000,000</h1>
@@ -157,7 +162,12 @@ export default function HeroSlider() {
     <div>
        <div className="md:hidden">
         <Swiper 
-        modules={[Pagination]}
+        modules={[Autoplay, Pagination]}
+         autoplay={{
+            delay: 2000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
+          }}
         pagination={{ clickable: true, el : ".swiperPaginationMobile" }}
         spaceBetween={30}
         slidesPerView={1}>
@@ -175,17 +185,58 @@ export default function HeroSlider() {
        </div>
             </SwiperSlide>
 
-
              <SwiperSlide>
         <div className="container lg:hidden mx-auto px-5 lg:px-10 lg:py-5">
-       <div className="bg-gradient-to-b from-[#870F1C] via-[#E842A7] to-[#E37CDC] flex justify-between items-center px-10 py-5 rounded-lg ">
-         <div className="flex-col gap-5 text-white">
-           <h1 className="text-[14px]">Iphone 15 Pro Max</h1>
+       <div className="bg-gradient-to-b from-[#db6b21] via-[#ebad83] to-[#db6b21] flex justify-between items-center px-10 py-5 rounded-lg">
+         <div className="flex-col text-white">
+            <h1 className="text-[14px]">Iphone 15 Pro Max</h1>
             <h1 className="text-[20px]">FROM  ₦1,000,000</h1>
             <p className="text-[10px]">A17 Pro chip with 6-core GPU Pro camera <br /> system with 48MP main</p>
             <Button onClick={handleShopNow} className=" w-[70px] h-[25px] mt-2 text-white font-semibold text-[10px]" content="Shop now" />
         </div>
-        <img loading="lazy" className="w-[35%] object-fit h-[150px]" src={PromAxPink} alt="" />
+        <img loading="lazy" className="w-[75px] object-fit h-[150px]" src={Iphone} alt="" />
+       </div>
+       </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+        <div className="container lg:hidden mx-auto px-5 lg:px-10 lg:py-5">
+       <div className="bg-gradient-to-b from-[#870F1C] via-[#E842A7] to-[#E37CDC] flex justify-between items-center px-10 py-5 rounded-lg">
+         <div className="flex-col text-white">
+            <h1 className="text-[14px]">Iphone 15 Pro Max</h1>
+            <h1 className="text-[20px]">FROM  ₦1,000,000</h1>
+            <p className="text-[10px]">A17 Pro chip with 6-core GPU Pro camera <br /> system with 48MP main</p>
+            <Button onClick={handleShopNow} className=" w-[70px] h-[25px] mt-2 text-white font-semibold text-[10px]" content="Shop now" />
+        </div>
+        <img loading="lazy" className="w-[75px] object-fit h-[150px]" src={Iphone} alt="" />
+       </div>
+       </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+        <div className="container lg:hidden mx-auto px-5 lg:px-10 lg:py-5">
+       <div className="bg-gradient-to-b from-[#21d5db] via-[#7abbbb] to-[#0f7b83] flex justify-between items-center px-10 py-5 rounded-lg">
+         <div className="flex-col text-white">
+            <h1 className="text-[14px]">Iphone 15 Pro Max</h1>
+            <h1 className="text-[20px]">FROM  ₦1,000,000</h1>
+            <p className="text-[10px]">A17 Pro chip with 6-core GPU Pro camera <br /> system with 48MP main</p>
+            <Button onClick={handleShopNow} className=" w-[70px] h-[25px] mt-2 text-white font-semibold text-[10px]" content="Shop now" />
+        </div>
+        <img loading="lazy" className="w-[75px] object-fit h-[150px]" src={Iphone} alt="" />
+       </div>
+       </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+        <div className="container lg:hidden mx-auto px-5 lg:px-10 lg:py-5">
+       <div className="bg-gradient-to-b from-[#45cf06] via-[#a4cf93] to-[#3e9404] flex justify-between items-center px-10 py-5 rounded-lg">
+         <div className="flex-col text-white">
+            <h1 className="text-[14px]">Iphone 15 Pro Max</h1>
+            <h1 className="text-[20px]">FROM  ₦1,000,000</h1>
+            <p className="text-[10px]">A17 Pro chip with 6-core GPU Pro camera <br /> system with 48MP main</p>
+            <Button onClick={handleShopNow} className=" w-[70px] h-[25px] mt-2 text-white font-semibold text-[10px]" content="Shop now" />
+        </div>
+        <img loading="lazy" className="w-[75px] object-fit h-[150px]" src={Iphone} alt="" />
        </div>
        </div>
             </SwiperSlide>
